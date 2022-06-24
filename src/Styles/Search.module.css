@@ -1,0 +1,25 @@
+
+.SearchContainer{
+    width: 75%;
+    height: 70px;
+    margin: auto;
+}
+.SearchBox{
+    color: rgb(124, 123, 123);
+    border: none;
+    height: 85%;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    width: 85%;
+    border-radius: 10px;
+}
+.SearchIcone{
+    color: rgb(163, 163, 163);
+    width: 70px;
+    height: 70%;
+    border: none;
+    background-color: transparent;
+    border-radius: 100%;
+    font-size: 20px;
+    margin: auto;
+    margin-left: -73px;
+}
