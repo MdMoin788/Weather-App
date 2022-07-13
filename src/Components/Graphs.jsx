@@ -1,88 +1,88 @@
-import React, { Component } from "react";
-import { useState, useEffect } from "react";
-import Chart from "react-apexcharts";
-// let data = [1, 2, 3, 4, 5, 6, 7, 8]
-// export const GraphsData = ({ daily }) => {
-//   let arr2 = []
-//   let man = false
-//   if (daily != null) {
-//     man = true
-//   }
-//   useEffect(() => {
-//     let arr = []
-//     function get() {
-//       daily.map((data, i) => {
-//         let ans = Math.floor(+data.temp.day)
-//         console.log('ans', ans);
-//         arr[i] = ans
-//       })
-//     }
-//     if (daily != null) {
-//       get()
-//       console.log("arr", arr)
-//       data = arr
-//       arr2 = arr
-//       console.log(typeof (data[0]), "ddata")
-      
-//     }
-//     new Graphs()
-//   }, [man])
-//   if (daily == null) {
-//     console.log("empty")
-//   } else {
-//     console.log("res", "data")
-//     data = arr2
-//   }
-//   return (
-//     <div>
-//     </div>
-//   )
-// }
+import axios from 'axios'
+import React from 'react'
+import { useState } from 'react'
+import { useEffect } from 'react'
+import { useSelector } from 'react-redux'
+import { ResponsiveContainer, BarChart, XAxis,  YAxis, Bar, Tooltip, Legend, Line, CartesianGrid } from "recharts"
+const Graphs = () => {
+  const daily = useSelector((store) => store.weathers.weather)
+  const manual = useSelector((store) => store.weathers.manual)
+  console.log('manual', manual);
+  const [tepmrature, setTemprature] = useState([])
+  const day = ["Thu", "Fri", "Sat", "Sun", "Mon", "Tue", "Wed", "Thu"]
+  useEffect( () => {
+    let arr = []
+    if (daily == null) {
+      manual.map((ele, i) => {
+        console.log(ele.temp)
+        ele.temp.name = day[i]
+        ele.temp.index = i
+        arr.push(ele.temp)
+      })
+      setTemprature([...arr])
+    }
+    else {
+      daily.map((ele, i) => {
+        console.log(ele.temp)
+        ele.temp.name = day[i]
+        ele.temp.index = i
+        arr.push(ele.temp)
+      })
+      setTemprature([...arr])
+    }
+  }, [daily, manual])
+  console.log('tepmrature', tepmrature);
+  return (
+    <div>
+      {
+        daily == null ?
+          <>
+            <div>
+              <h3 style={{ "text-align": "center", textDecoration: "underline" }}>Bar Charts</h3>
+              <ResponsiveContainer width="75%" aspect={3} >
+                <BarChart data={tepmrature} >
+                  <XAxis dataKey="name" interval={"preserveStartEnd"} />
+                  <YAxis dataKey="day" interval={"preserveStartEnd"} />
+                  <Tooltip />
+                  <Legend />
+                  <Bar type="monotone" dataKey="day" fill="green" />
+                  <Bar type="monotone" dataKey="morn" fill="#82ca9d" />
+                  <Bar type="monotone" dataKey="eve" fill="red" />
+                  <Bar type="monotone" dataKey="night" fill="blue" />
+                  <Bar type="monotone" dataKey="min" fill="yellow" />
+                  <Bar type="monotone" dataKey="max" fill="black" />
+                  <CartesianGrid strokeDasharray="3 3" />
+                </BarChart >
+              </ResponsiveContainer>
+            </div>
+       
 
-
-class Graphs extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      options: {
-        chart: {
-          id: "basic-bar"
-        },
-        xaxis: {
-          categories: ["Thu", "Fri", "Sat", "Sun", "Mon", "Tue", "Wed", "Thu"]
-        }
-      },
-      series: [
-        {
-          name: "temprature",
-          data: [1, 2, 3, 4, 5, 6, 7, 8]
-        },
-        {
-          name: "max-temp",
-          data: [30, 40, 45, 50, 49, 60, 70, 20]
-        },
-        {
-          name: "min-temp",
-          data: [30, 40, 45, 50, 49, 60, 70, 20]
-        }
-      ]
-    };
-  }
-  render() {
-    return (
-      <div className="app">
-        <div className="row">
-          <div className="mixed-chart">
-            <Chart
-              options={this.state.options}
-              series={this.state.series}
-              type="area"
-              width="500"
-            />
-          </div>
-        </div>
-      </div>
-    );
-  }
+          </>
+          :
+          <>
+            <div>
+              <h3 style={{ "text-align": "center", textDecoration: "underline" }}>Bar Charts</h3>
+              <ResponsiveContainer width="75%" aspect={3} >
+                <BarChart data={tepmrature} >
+                  <XAxis dataKey="name" interval={"preserveStartEnd"} />
+                  <YAxis dataKey="day" interval={"preserveStartEnd"} />
+                  <Tooltip />
+                  <Legend />
+                  <Bar type="monotone" dataKey="day" fill="green" />
+                  <Bar type="monotone" dataKey="morn" fill="#82ca9d" />
+                  <Bar type="monotone" dataKey="eve" fill="red" />
+                  <Bar type="monotone" dataKey="night" fill="blue" />
+                  <Bar type="monotone" dataKey="min" fill="yellow" />
+                  <Bar type="monotone" dataKey="max" fill="black" />
+                  <CartesianGrid strokeDasharray="3 3" />
+                </BarChart >
+              </ResponsiveContainer>
+            </div>
+           
+           
+          </>
+      }
+    </div>
+  )
 }
-export default Graphs;
+export default Graphs

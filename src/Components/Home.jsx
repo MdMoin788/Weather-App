@@ -28,16 +28,13 @@ const Home = () => {
             <div className={Homes.HomeContainerData}>
                 <WeatherData></WeatherData>
             </div>
-            <br />
-            <br />
-            <br />
+        
+          
             {/* -----------------------------------  graph ----------------------------------------------------------- */}
             <div className={Homes.HomeContainerGraph}>
-                <div className={Homes.HomeGraph}>
-                    <div className={Homes.HomeGraph1}>
+                
                         <Graphs></Graphs>
-                    </div>
-                </div>
+                 
             </div>
             <br />
    

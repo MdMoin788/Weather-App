@@ -14,10 +14,7 @@ const Data = () => {
                 weekData2.map((ele, i) => {
                     let convert = ele.sunrise;
                     let ApiDate = new Date(convert * 1000).toDateString().split(" ")
-                    // let ApiDate1 = new Date(convert * 1000).toDateString().split(" ")
-                    // let ApiDate2 = new Date(ele.sunrise * 1000).toTimeString()
-                    // let ApiDate3 = new Date(ele.sunrise * 1000).toLocaleTimeString("en-IN")
-                    // let ApiDate3 = new Date(ele.sunrise * 1000).toLocaleTimeString("en-IN")
+               
                     const currentDate = new Date().toDateString().split(" ")
                     return (
                         currentDate[0] == ApiDate[0] && i != weekData2.length - 1 ? <div className={Homes.HomeData}>
@@ -51,4 +48,18 @@ const Data = () => {
         </>
     )
 }
-export default Data
+
+
+export default Data 
+
+
+
+
+
+
+
+
+
+
+
+
