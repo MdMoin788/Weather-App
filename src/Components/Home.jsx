@@ -6,13 +6,16 @@ import WeatherData from './WeatherData'
 import axios from 'axios'
 import { useSelector } from 'react-redux'
 import Graphs from './Graphs'
+import GoogleMap from './GoogleMap'
 
 
 const Home = () => {
     const city = useSelector((store) => store.weathers.cities)
 
     return (
-        <div className={Homes.HomeContainer}>
+       <>
+       
+       <div className={Homes.HomeContainer}>
             <div className={Homes.SearchBar}>
                 <SearchBar></SearchBar>
             </div>
@@ -37,8 +40,18 @@ const Home = () => {
                  
             </div>
             <br />
-   
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
         </div>
+   <GoogleMap></GoogleMap>
+       
+       </>
 
         
     )
