@@ -8,7 +8,48 @@ import Graphs from './Graphs'
 import GoogleMap from './GoogleMap'
 import SimpleChart from './SimpleChart'
 const Home = () => {
+    
+    const data = [
+        {
+            Time: "8:30 AM",
+            temperature: 24,
+        },
+        {
+            Time: "12:30 PM",
+            temperature: 13,
+        },
+        {
+            Time: "6:30 PM",
+            temperature: 98,
+        },
+        {
+            Time: "10:30 PM",
+            temperature: 39,
+        },
+        {
+            Time: "10:30 PM",
+            temperature: 48,
+        }
+    ];
+
     const city = useSelector((store) => store.weathers.cities)
+    const weekData2 = useSelector((store) => store.weathers.manual)
+    const daily = useSelector((store) => store.weathers.weather)
+
+        for (let i = 0; i < data.length; i++) {
+            if (i == 0) {
+                data[i].temperature = +daily[0].feels_like.morn
+            }
+            else if (i == 1) {
+                data[i].temperature = +daily[0].feels_like.day
+            } else if (i == 2) {
+                data[i].temperature = +daily[0].feels_like.eve
+            }
+            else {
+                data[i].temperature = +daily[0].feels_like.night
+            }
+        }  
+
     return (
         <>
             <div className={Homes.HomeContainer}>
@@ -46,7 +87,7 @@ const Home = () => {
                 {/* -----------------------------------  google map ----------------------------------------------------------- */}
 
                 <div className={Homes.HomeContainerGraph}>
-                    <GoogleMap></GoogleMap>
+                    <GoogleMap data= {data}></GoogleMap>
                 </div>
             </div>
         </>
