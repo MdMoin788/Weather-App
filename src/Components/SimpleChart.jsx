@@ -89,7 +89,6 @@ const SimpleChart = () => {
               >
                 <CartesianGrid strokeDasharray="3 3" />
                 <XAxis dataKey="name" />
-                <YAxis />
                 <Tooltip />
                 <Area type="monotone" dataKey="pv" stroke="#82ca9d" fill="#82ca9d" />
               </AreaChart>
@@ -113,7 +112,6 @@ const SimpleChart = () => {
               >
                 <CartesianGrid strokeDasharray="3 3" />
                 <XAxis dataKey="name" />
-                <YAxis />
 
                 <Tooltip />
                 <Area type="monotone" dataKey="pv" stroke="#82ca9d" fill="#82ca9d" />
