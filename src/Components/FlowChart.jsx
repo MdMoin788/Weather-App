@@ -2,12 +2,9 @@ import React, { useEffect, useState } from 'react';
 import Chart from "react-apexcharts";
 import { useSelector } from 'react-redux';
 import Styles from "../Styles/FlowChart.module.css"
-import Homes from "../Styles/Home.module.css"
 
 
 const Flowchart = ({tepmrature}) => {
-// console.log('Temprature floww', tepmrature);
-const weekData = useSelector((store) => store.weathers.weather)
 
 
     const obj = {

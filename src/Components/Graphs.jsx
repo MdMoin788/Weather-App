@@ -2,6 +2,8 @@ import axios from 'axios'
 import React from 'react'
 import { useState } from 'react'
 import { useEffect } from 'react'
+import Styles from "../Styles/FlowChart.module.css"
+
 import { useSelector } from 'react-redux'
 import { ResponsiveContainer, BarChart, XAxis,  YAxis, Bar, Tooltip, Legend, Line, CartesianGrid } from "recharts"
 import Flowchart from './Flowchart'
@@ -35,7 +37,7 @@ const Graphs = () => {
   }, [daily, manual])
   console.log('tepmrature', tepmrature);
   return (
-    <div>
+    <div className={Styles.Flowchart}>
       {/* {
         daily == null ?
           <>
