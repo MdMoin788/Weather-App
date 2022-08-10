@@ -7,6 +7,7 @@ import Styles from "../Styles/FlowChart.module.css"
 import { useSelector } from 'react-redux'
 import { ResponsiveContainer, BarChart, XAxis,  YAxis, Bar, Tooltip, Legend, Line, CartesianGrid } from "recharts"
 import Flowchart from './Flowchart'
+import SimpleChart from './SimpleChart'
 const Graphs = () => {
   const daily = useSelector((store) => store.weathers.weather)
   const manual = useSelector((store) => store.weathers.manual)
@@ -14,6 +15,25 @@ const Graphs = () => {
   const [tepmrature, setTemprature] = useState([])
   console.log('tepmrature', tepmrature);
   const day = ["Thu", "Fri", "Sat", "Sun", "Mon", "Tue", "Wed", "Thu"]
+  const temp = [
+    28.9,
+    28.97,
+    28.71,
+    28.36,
+    27.92,
+    27.62,
+    27.34,
+    27.16,
+    27.34,
+    27.91,
+    28.52,
+    29.88
+]
+const time = [
+    , "10:30 PM", "11:30 PM", "12:30 AM", "1:30 AM", "2:30 AM", "3:30 AM", "4:30 AM", "5:30 AM", "6:30 AM", "7:30 AM"
+    , "8:30 AM"
+    , "9:30 AM"
+]
   useEffect( () => {
     let arr = []
     if (daily == null) {
@@ -89,6 +109,9 @@ const Graphs = () => {
 {
   tepmrature.length != 0 && <Flowchart tepmrature = {tepmrature}></Flowchart>
 }
+  {/* <Flowchart temp= {temp} time = {time}></Flowchart> */}
+
+
     </div>
   )
 }

@@ -5,6 +5,7 @@ import Styles from "../Styles/FlowChart.module.css"
 
 
 const Flowchart = ({tepmrature}) => {
+const weekData = useSelector((store) => store.weathers.weather)
 
 
     const obj = {

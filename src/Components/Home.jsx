@@ -3,11 +3,10 @@ import Homes from "../Styles/Home.module.css"
 import Weather from './Weather'
 import SearchBar from './SearchBar'
 import WeatherData from './WeatherData'
-import axios from 'axios'
 import { useSelector } from 'react-redux'
 import Graphs from './Graphs'
 import GoogleMap from './GoogleMap'
-import Flowchart from './Flowchart'
+import SimpleChart from './SimpleChart'
 const Home = () => {
     const city = useSelector((store) => store.weathers.cities)
     return (
@@ -34,12 +33,12 @@ const Home = () => {
                 <br />
                 <br />
                 <br />
+              
+               
                 <div className={Homes.HomeContainerGraph}>
                     <GoogleMap></GoogleMap>
                 </div>
-                <br />
-                <br />
-                <br />
+                
             </div>
         </>
     )
