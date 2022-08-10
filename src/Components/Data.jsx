@@ -5,6 +5,7 @@ import Homes from "../Styles/Home.module.css"
 
 
 
+
 const Data = () => {
     const weekData2 = useSelector((store) => store.weathers.manual)
     console.log('weekData2', weekData2);
