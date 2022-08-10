@@ -33,12 +33,17 @@ const Home = () => {
                 <br />
                 <br />
                 <br />
-              
-               
+                <br />
+                <div className={Homes.HomeContainerGraph}>
+                    <SimpleChart></SimpleChart>
+                </div>
+                <br />
+                <br />
+
+                <br />
                 <div className={Homes.HomeContainerGraph}>
                     <GoogleMap></GoogleMap>
                 </div>
-                
             </div>
         </>
     )

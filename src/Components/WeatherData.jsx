@@ -10,7 +10,6 @@ const WeatherData = () => {
                     weekData.map((ele, i) => {
                         let convert = ele.sunrise;
                         let ApiDate = new Date(convert * 1000).toDateString().split(" ")
-                        // let ApiDate = new Date(ele.sunrise * 1000).toTimeString()
                         const currentDate = new Date().toDateString().split(" ")
                         return (
                             currentDate[0] == ApiDate[0] && i != weekData.length - 1 ? <div className={Homes.HomeData}>

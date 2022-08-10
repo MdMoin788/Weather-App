@@ -33,7 +33,6 @@ const Weather = () => {
                         }
                     </div>
             }
-            {/* <GraphsData daily={daily}></GraphsData> */}
         </>
     )
 }
