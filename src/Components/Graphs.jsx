@@ -4,11 +4,13 @@ import { useState } from 'react'
 import { useEffect } from 'react'
 import { useSelector } from 'react-redux'
 import { ResponsiveContainer, BarChart, XAxis,  YAxis, Bar, Tooltip, Legend, Line, CartesianGrid } from "recharts"
+import Flowchart from './Flowchart'
 const Graphs = () => {
   const daily = useSelector((store) => store.weathers.weather)
   const manual = useSelector((store) => store.weathers.manual)
   console.log('manual', manual);
   const [tepmrature, setTemprature] = useState([])
+  console.log('tepmrature', tepmrature);
   const day = ["Thu", "Fri", "Sat", "Sun", "Mon", "Tue", "Wed", "Thu"]
   useEffect( () => {
     let arr = []
@@ -34,7 +36,7 @@ const Graphs = () => {
   console.log('tepmrature', tepmrature);
   return (
     <div>
-      {
+      {/* {
         daily == null ?
           <>
             <div>
@@ -81,7 +83,10 @@ const Graphs = () => {
            
            
           </>
-      }
+      } */}
+{
+  tepmrature.length != 0 && <Flowchart tepmrature = {tepmrature}></Flowchart>
+}
     </div>
   )
 }

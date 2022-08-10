@@ -7,6 +7,7 @@ import axios from 'axios'
 import { useSelector } from 'react-redux'
 import Graphs from './Graphs'
 import GoogleMap from './GoogleMap'
+import Flowchart from './Flowchart'
 
 
 const Home = () => {
@@ -43,6 +44,7 @@ const Home = () => {
             <br />
             <br />
             <br />
+            {/* <Flowchart></Flowchart> */}
             <br />
             <br />
             <br />
@@ -50,6 +52,7 @@ const Home = () => {
             <br />
         </div>
    <GoogleMap></GoogleMap>
+
        
        </>
 
