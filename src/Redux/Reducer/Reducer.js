@@ -7,6 +7,7 @@ const initState = {
   manual : [],
   cities : ""
 }
+
 export const reducer = (store = initState, { type, payload }) => {
   if(payload == undefined){
 

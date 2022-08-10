@@ -11,3 +11,4 @@ const composeEnhancers =
 const middleware = [thunk]
 const enhancer = composeEnhancers(applyMiddleware(...middleware))
 export const store = createStore(rootReducer, enhancer)
+

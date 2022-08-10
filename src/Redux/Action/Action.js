@@ -1,7 +1,7 @@
 import axios from 'axios'
 import { FAILURE, LOADING, MANUAL, SUCCESS, WEATHER } from '../ActionType/ActionType'
 export const ActionWeather = (city) => async (dispatch) => {
-  console.log('city Action ', city);
+
   try {
     dispatch(loadings())
     let result = await axios.get(
