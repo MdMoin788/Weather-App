@@ -2,69 +2,42 @@ import {
     AreaChart,
     Area,
     XAxis,
-    YAxis,
-    CartesianGrid,
+  
     Tooltip
 } from "recharts";
 import Styles from "../Styles/FlowChart.module.css"
 
 import { useSelector } from "react-redux";
 const SimpleChart = () => {
+
+    const daily = useSelector((store) => store.weathers.weather)
+
+
+
     const data = [
         {
-            Time: "10:30 am",
+            Time: "8:30 AM",
             temperature: 24,
         },
         {
-            Time: "10:30 am",
+            Time: "12:30 PM",
             temperature: 13,
         },
         {
-            Time: "10:30 am",
+            Time: "6:30 PM",
             temperature: 98,
         },
         {
-            Time: "10:30 am",
+            Time: "10:30 PM",
             temperature: 39,
         },
         {
-            Time: "10:30 am",
+            Time: "10:30 PM",
             temperature: 48,
-        },
-        {
-            Time: "10:30 am",
-            temperature: 38,
-        }
-        ,
-        {
-            Time: "10:30 am",
-            temperature: 43,
-        }
-        ,
-        {
-            Time: "10:30 am",
-            temperature: 43,
         }
     ];
-    const temp = [
-        28.9,
-        28.97,
-        28.71,
-        28.36,
-        27.92,
-        27.62,
-        27.34,
-        27.16,
-        27.34,
-        27.91,
-        28.52,
-        29.88
-    ]
-    const time = [
-        , "10:30 PM", "11:30 PM", "12:30 AM", "1:30 AM", "2:30 AM", "3:30 AM", "4:30 AM", "5:30 AM", "6:30 AM", "7:30 AM"
-        , "8:30 AM"
-        , "9:30 AM"
-    ]
+    
+    
     const daily = useSelector((store) => store.weathers.weather)
     return (
         <>
