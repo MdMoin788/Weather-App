@@ -34,6 +34,8 @@ const Home = () => {
                 <br />
                 <br />
                 <br />
+                {/* -----------------------------------  sample chart----------------------------------------------------------- */}
+
                 <div className={Homes.HomeContainerGraph}>
                     <SimpleChart></SimpleChart>
                 </div>
@@ -41,6 +43,8 @@ const Home = () => {
                 <br />
 
                 <br />
+                {/* -----------------------------------  google map ----------------------------------------------------------- */}
+
                 <div className={Homes.HomeContainerGraph}>
                     <GoogleMap></GoogleMap>
                 </div>

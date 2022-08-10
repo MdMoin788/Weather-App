@@ -16,14 +16,12 @@ import {
 import Flowchart from './Flowchart'
 import SimpleChart from './SimpleChart'
 const Graphs = () => {
- 
   const daily = useSelector((store) => store.weathers.weather)
   const manual = useSelector((store) => store.weathers.manual)
   console.log('manual', manual);
   const [tepmrature, setTemprature] = useState([])
   console.log('tepmrature', tepmrature);
   const day = ["Thu", "Fri", "Sat", "Sun", "Mon", "Tue", "Wed", "Thu"]
-  
   useEffect(() => {
     let arr = []
     if (daily == null) {
@@ -48,11 +46,9 @@ const Graphs = () => {
   console.log('tepmrature', tepmrature);
   return (
     <div className={Styles.Flowchart}>
-      
       {
         tepmrature.length != 0 && <Flowchart tepmrature={tepmrature}></Flowchart>
       }
-   
     </div>
   )
 }
