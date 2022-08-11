@@ -27,7 +27,7 @@ const ManulWeather = () => {
             dispatch({ type: "CITIES", payload: tamp.name })
             dispatch(rendering(daily))
             setWeekData(daily)
-            console.log('daily', daily);
+            // console.log('daily', daily);
         }
         getWeather()
     }, [])
@@ -43,7 +43,7 @@ const ManulWeather = () => {
                 {
                     weekData.map((ele, i) => {
                         return (
-                            <button className={Homes.HomeBox1} onClick={()=>showData(ele, i)}>
+                            <button className={Homes.HomeBox1} onClick={()=>showData(ele, i)} key={i}>
                                 <div className={Homes.HomeBoxChildPar}>
                                     <div className={Homes.HomeBoxChild1}>{day[i]}</div>
                                     <div className={Homes.HomeBoxChild1}>{ele.temp.day}%</div>

@@ -7,7 +7,6 @@ import ManulWeather from './ManulWeather';
 const Weather = () => {
     const dispatch = useDispatch()
     const daily = useSelector((store) => store.weathers.weather)
-    console.log('daily', typeof (daily));
     let day = ["Thu", "Fri", "Sat", "Sun", "Mon", "Tue", "Wed", "Thu"]
     const showData1 = (ele, i) => {
         let arr1 = []
@@ -23,10 +22,10 @@ const Weather = () => {
                             daily.map((ele, i) => {
                        
                                     return (
-                                        <button className={Homes.HomeBox1} onClick={() => showData1(ele, i)}>
+                                        <button className={Homes.HomeBox1} onClick={() => showData1(ele, i)} key={i}>
                                             <div className={Homes.HomeBoxChildPar}>
                                                 <div className={Homes.HomeBoxChild1}>{day[i]}</div>
-                                                <div className={Homes.HomeBoxChild1}>{ele.temp.day} hi</div>
+                                                <div className={Homes.HomeBoxChild1}>{ele.temp.day} </div>
                                             </div>
                                             <div className={Homes.HomeBoxChild}>
                                                 <div className={Homes.HomeBoxChild1img}>

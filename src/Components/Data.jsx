@@ -4,12 +4,12 @@ import Homes from "../Styles/Home.module.css"
 
 
 
-let j = 0
+// let j = 0
 
 const Data = () => {
     const weekData2 = useSelector((store) => store.weathers.manual)
     const single = useSelector((store) => store.weathers.single)
-    console.log('weekData2', weekData2);
+    // console.log('weekData2', weekData2);
     return (
         <>
             {
@@ -18,7 +18,7 @@ const Data = () => {
                 let convert = ele.sunrise;
                 let ApiDate = new Date(convert * 1000).toDateString().split(" ")
            
-                const currentDate = new Date().toDateString().split(" ")
+                // const currentDate = new Date().toDateString().split(" ")
                 if(i == 0){
                     return (
                         <div className={Homes.HomeData}>

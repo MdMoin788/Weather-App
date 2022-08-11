@@ -9,29 +9,6 @@ import GoogleMap from './GoogleMap'
 import SimpleChart from './SimpleChart'
 const Home = () => {
     
-    const data = [
-        {
-            Time: "8:30 AM",
-            temperature: 24,
-        },
-        {
-            Time: "12:30 PM",
-            temperature: 13,
-        },
-        {
-            Time: "6:30 PM",
-            temperature: 98,
-        },
-        {
-            Time: "10:30 PM",
-            temperature: 39,
-        },
-        {
-            Time: "10:30 PM",
-            temperature: 48,
-        }
-    ];
-
     const city = useSelector((store) => store.weathers.cities)
   
         
@@ -63,9 +40,13 @@ const Home = () => {
                 <br />
                 {/* -----------------------------------  sample chart----------------------------------------------------------- */}
 
-                {/* <div className={Homes.HomeContainerGraph}>
+                <div className={Homes.HomeContainerGraph}>
                     <SimpleChart></SimpleChart>
-                </div> */}
+                </div>
+                <br />
+                <br />
+                <br />
+                <br />
                 <br />
                 <br />
 
@@ -73,7 +54,7 @@ const Home = () => {
                 {/* -----------------------------------  google map ----------------------------------------------------------- */}
 
                 <div className={Homes.HomeContainerGraph}>
-                    <GoogleMap data= {data}></GoogleMap>
+                    <GoogleMap ></GoogleMap>
                 </div>
             </div>
         </>
