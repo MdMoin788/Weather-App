@@ -5,7 +5,6 @@ function App() {
     <>
     <Home></Home>
     
-    
     </>
   )
 }

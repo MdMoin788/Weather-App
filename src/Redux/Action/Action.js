@@ -65,6 +65,7 @@ export const rendering = (daily) => (dispatch) => {
 
   }
 }
+
 export const singleDatas = (ele, i) => (dispatch) => {
   console.log('ele action', ele);
   try {
