@@ -4,11 +4,12 @@ import Homes from "../Styles/Home.module.css"
 import axios from 'axios'
 import { useState } from 'react';
 import WeatherData from './WeatherData';
-import { rendering } from '../Redux/Action/Action';
+import { rendering, singleDatas } from '../Redux/Action/Action';
 import Data from './Data';
 const ManulWeather = () => {
     let day = ["Thu", "Fri", "Sat", "Sun", "Mon", "Tue", "Wed", "Thu"]
     const [weekData, setWeekData] = useState([])
+   
     const dispatch = useDispatch()
     useEffect(() => {
         async function getWeather() {
@@ -30,13 +31,19 @@ const ManulWeather = () => {
         }
         getWeather()
     }, [])
+
+    const showData = (ele, i)=>{
+        let arr = []
+        arr.push(ele)
+        dispatch(singleDatas(arr))
+    }
     return (
         <>
             <div className={Homes.HomeBox}>
                 {
                     weekData.map((ele, i) => {
                         return (
-                            <button className={Homes.HomeBox1}>
+                            <button className={Homes.HomeBox1} onClick={()=>showData(ele, i)}>
                                 <div className={Homes.HomeBoxChildPar}>
                                     <div className={Homes.HomeBoxChild1}>{day[i]}</div>
                                     <div className={Homes.HomeBoxChild1}>{ele.temp.day}%</div>

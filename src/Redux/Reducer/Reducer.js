@@ -5,7 +5,8 @@ const initState = {
   succcess: false,
   weather: null,
   manual : [],
-  cities : ""
+  cities : "",
+  single : null
 }
 
 export const reducer = (store = initState, { type, payload }) => {
@@ -18,6 +19,8 @@ export const reducer = (store = initState, { type, payload }) => {
       return { ...store, weather: payload }
     case "CITIES":
       return { ...store, cities: payload }
+    case "SINGLE":
+      return { ...store, single: payload }
     case MANUAL:
       return { ...store, manual: payload }
     case LOADING:

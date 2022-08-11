@@ -33,7 +33,7 @@ const SearchBar = () => {
 
     return (
         <div className={Searchs.SearchContainer}>
-            <input type="text" onChange={deb} className={Searchs.SearchBox} />
+            <input type="text" onChange={deb} className={Searchs.SearchBox} placeholder="Enter City Name Here" />
             <button className={Searchs.SearchIcone} onClick={handleSubmit}><i className={Searchs.SearchIcone} class="fa-solid fa-magnifying-glass"></i></button>
         </div>
     )
