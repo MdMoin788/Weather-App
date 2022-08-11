@@ -33,24 +33,24 @@ const Home = () => {
     ];
 
     const city = useSelector((store) => store.weathers.cities)
-    const weekData2 = useSelector((store) => store.weathers.manual)
-    const daily = useSelector((store) => store.weathers.weather)
-    if(daily == null){
-        weekData2.map((ele, i)=>{
-            console.log('ele', ele);
-            if (i == 0) {
-                data[i].temperature = +ele.feels_like.morn
-            }
-            else if (i == 1) {
-                data[i].temperature = +ele.feels_like.day
-            } else if (i == 2) {
-                data[i].temperature = +ele.feels_like.eve
-            }
-            else {
-                data[i].temperature = +ele.feels_like.night
-            }
-        })
-    }
+    // const weekData2 = useSelector((store) => store.weathers.manual)
+    // const daily = useSelector((store) => store.weathers.weather)
+    // if(daily == null){
+    //     weekData2.map((ele, i)=>{
+    //         console.log('ele', ele);
+    //         if (i == 0) {
+    //             data[i].temperature = +ele.feels_like.morn
+    //         }
+    //         else if (i == 1) {
+    //             data[i].temperature = +ele.feels_like.day
+    //         } else if (i == 2) {
+    //             data[i].temperature = +ele.feels_like.eve
+    //         }
+    //         else {
+    //             data[i].temperature = +ele.feels_like.night
+    //         }
+    //     })
+    // }
         
 
     return (
@@ -80,9 +80,9 @@ const Home = () => {
                 <br />
                 {/* -----------------------------------  sample chart----------------------------------------------------------- */}
 
-                <div className={Homes.HomeContainerGraph}>
+                {/* <div className={Homes.HomeContainerGraph}>
                     <SimpleChart></SimpleChart>
-                </div>
+                </div> */}
                 <br />
                 <br />
 
