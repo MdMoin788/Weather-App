@@ -6,38 +6,40 @@ const SimpleChart = () => {
     const city = useSelector((store) => store.weathers.cities)
     const daily = useSelector((store) => store.weathers.weather)
     const manual = useSelector((store) => store.weathers.manual)
-    console.log('manual', manual);
-    console.log('daily', daily);
     const single = useSelector((store) => store.weathers.single)
+    console.log('single', single);
     const [day, setDay] = useState([])
     const [temp, setTemp] = useState([])
-  useEffect(()=>{
-    let arr = []
-    let arr2 = []
-    if (daily && !single ) {
-        daily.map((ele, i) => {
-        console.log('ele', ele.temp.name);
-        arr.push(ele.temp.name)
-        arr2.push(ele.temp.day.toFixed(0))
-        })
-        setDay([...arr])
-    setTemp([...arr2])
-    }
-    else if( !daily && !single){
-        manual.map((ele, i) => {
-            console.log('ele', ele.temp.name);
-            arr.push(ele.temp.name)
-            arr2.push(ele.temp.day.toFixed(0))
+    useEffect(() => {
+        let arr = []
+        let arr2 = []
+        if (single != null) {
+            single.map((ele) => {
+                arr2.push(ele.feels_like.morn.toFixed(0), ele.feels_like.day.toFixed(0), ele.feels_like.eve.toFixed(0), ele.feels_like.night.toFixed(0), ele.feels_like.night.toFixed(0))
+            })
+            arr.push("8:30 AM", "12:30 AM", "6:30 AM", "8:30 AM", "10:30 AM")
+            setDay([...arr])
+            setTemp([...arr2])
+        }
+        else if (daily && !single) {
+            daily.map((ele, i) => {
+                console.log('ele', ele.temp.name);
+                arr.push(ele.temp.name)
+                arr2.push(ele.temp.day.toFixed(0))
             })
             setDay([...arr])
-        setTemp([...arr2])
-    }
-
-    
-    console.log(arr2)
-
-  }, [daily, single, manual])
-
+            setTemp([...arr2])
+        }
+        else if (!daily && !single) {
+            manual.map((ele, i) => {
+                console.log('ele', ele.temp.name);
+                arr.push(ele.temp.name)
+                arr2.push(ele.temp.day.toFixed(0))
+            })
+            setDay([...arr])
+            setTemp([...arr2])
+        }
+    }, [daily, single, manual])
     const obj = {
         options: {
             chart: {
@@ -54,15 +56,15 @@ const SimpleChart = () => {
             },
             xaxis: {
                 categories: day ||
-                [
-                    "01 Jan",
-                    "02 Jan",
-                    "03 Jan",
-                    "04 Jan",
-                    "05 Jan",
-                    "06 Jan",
-                    "07 Jan"
-                ],
+                    [
+                        "01 Jan",
+                        "02 Jan",
+                        "03 Jan",
+                        "04 Jan",
+                        "05 Jan",
+                        "06 Jan",
+                        "07 Jan"
+                    ],
             }
         },
         series: [
@@ -80,7 +82,7 @@ const SimpleChart = () => {
                         options={obj.options}
                         series={obj.series}
                         type="area"
-                        width="665px"
+                        width="85%"
                         height="300px"
                     />
                 </div>
