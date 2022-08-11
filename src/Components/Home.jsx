@@ -7,6 +7,7 @@ import { useSelector } from 'react-redux'
 import Graphs from './Graphs'
 import GoogleMap from './GoogleMap'
 import SimpleChart from './SimpleChart'
+import { useState } from "react";
 const Home = () => {
     
     const city = useSelector((store) => store.weathers.cities)
@@ -41,7 +42,7 @@ const Home = () => {
                 {/* -----------------------------------  sample chart----------------------------------------------------------- */}
 
                 <div className={Homes.HomeContainerGraph}>
-                    <SimpleChart></SimpleChart>
+                    <SimpleChart ></SimpleChart>
                 </div>
                 <br />
                 <br />
