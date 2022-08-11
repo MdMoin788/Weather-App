@@ -76,6 +76,12 @@ const SimpleChart = () => {
     }
     return (
         <>
+           <div style={{width :"200px", display : "flex"}}>
+           <span><h1>{33}%</h1></span> <span>
+            <img style={{width :"60px"}} src='https://restya.com/wp-content/uploads/2021/05/restya-weather-cb.png' alt="" />
+
+            </span>
+           </div>
             <div className="row daychart">
                 <div className="mixed-chart">
                     <Chart

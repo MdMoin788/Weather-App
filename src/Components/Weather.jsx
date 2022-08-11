@@ -25,7 +25,7 @@ const Weather = () => {
                                         <button className={Homes.HomeBox1} onClick={() => showData1(ele, i)} key={i}>
                                             <div className={Homes.HomeBoxChildPar}>
                                                 <div className={Homes.HomeBoxChild1}>{day[i]}</div>
-                                                <div className={Homes.HomeBoxChild1}>{ele.temp.day} </div>
+                                                <div className={Homes.HomeBoxChild1}>{ele.temp.day}% </div>
                                             </div>
                                             <div className={Homes.HomeBoxChild}>
                                                 <div className={Homes.HomeBoxChild1img}>
