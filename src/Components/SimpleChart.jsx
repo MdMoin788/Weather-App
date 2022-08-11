@@ -21,7 +21,7 @@ const SimpleChart = () => {
             setDay([...arr])
             setTemp([...arr2])
         }
-        else if (daily && !single) {
+        else if (daily) {
             daily.map((ele, i) => {
                 console.log('ele', ele.temp.name);
                 arr.push(ele.temp.name)
