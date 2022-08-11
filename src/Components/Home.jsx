@@ -35,20 +35,23 @@ const Home = () => {
     const city = useSelector((store) => store.weathers.cities)
     const weekData2 = useSelector((store) => store.weathers.manual)
     const daily = useSelector((store) => store.weathers.weather)
-
-        for (let i = 0; i < data.length; i++) {
+    if(daily == null){
+        weekData2.map((ele, i)=>{
+            console.log('ele', ele);
             if (i == 0) {
-                data[i].temperature = +daily[0].feels_like.morn
+                data[i].temperature = +ele.feels_like.morn
             }
             else if (i == 1) {
-                data[i].temperature = +daily[0].feels_like.day
+                data[i].temperature = +ele.feels_like.day
             } else if (i == 2) {
-                data[i].temperature = +daily[0].feels_like.eve
+                data[i].temperature = +ele.feels_like.eve
             }
             else {
-                data[i].temperature = +daily[0].feels_like.night
+                data[i].temperature = +ele.feels_like.night
             }
-        }  
+        })
+    }
+        
 
     return (
         <>
