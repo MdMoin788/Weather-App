@@ -10,34 +10,44 @@ const SimpleChart = () => {
     console.log('single', single);
     const [day, setDay] = useState([])
     const [temp, setTemp] = useState([])
+    const [temper, setTemper] = useState(0)
     useEffect(() => {
         let arr = []
         let arr2 = []
         if (single != null) {
             single.map((ele) => {
-                arr2.push(ele.feels_like.morn.toFixed(0), ele.feels_like.day.toFixed(0), ele.feels_like.eve.toFixed(0), ele.feels_like.night.toFixed(0), ele.feels_like.night.toFixed(0))
+              
+
+                arr2.push(ele.feels_like.morn, ele.feels_like.day, ele.feels_like.eve, ele.feels_like.night, ele.feels_like.night)
+                setTemper(ele.temp.day)
+
             })
             arr.push("8:30 AM", "12:30 AM", "6:30 AM", "8:30 AM", "10:30 AM")
             setDay([...arr])
             setTemp([...arr2])
+
         }
         else if (daily) {
             daily.map((ele, i) => {
                 console.log('ele', ele.temp.name);
                 arr.push(ele.temp.name)
-                arr2.push(ele.temp.day.toFixed(0))
+                arr2.push(ele.temp.day)
             })
             setDay([...arr])
             setTemp([...arr2])
+            setTemper(arr2[0])
+
         }
         else if (!daily && !single) {
             manual.map((ele, i) => {
                 console.log('ele', ele.temp.name);
                 arr.push(ele.temp.name)
-                arr2.push(ele.temp.day.toFixed(0))
+                arr2.push(ele.temp.day)
+
             })
             setDay([...arr])
             setTemp([...arr2])
+            setTemper(arr2[0])
         }
     }, [daily, single, manual])
     const obj = {
@@ -76,9 +86,9 @@ const SimpleChart = () => {
     }
     return (
         <>
-           <div style={{width :"200px", display : "flex"}}>
-           <span><h1>{33}%</h1></span> <span>
-            <img style={{width :"60px"}} src='https://restya.com/wp-content/uploads/2021/05/restya-weather-cb.png' alt="" />
+           <div style={{width :"250px", display : "flex" ,gap : "10px"}}>
+           <span><h1 style={{fontSize : "35px"}}>{temper}%</h1></span> <span>
+            <img style={{width :"75px"}} src='https://restya.com/wp-content/uploads/2021/05/restya-weather-cb.png' alt="" />
 
             </span>
            </div>
